@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170814153120) do
+ActiveRecord::Schema.define(version: 20170814185751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "belge_categories", force: :cascade do |t|
+    t.bigint "category_id"
+    t.bigint "belge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["belge_id"], name: "index_belge_categories_on_belge_id"
+    t.index ["category_id"], name: "index_belge_categories_on_category_id"
+  end
 
   create_table "belges", force: :cascade do |t|
     t.string "first_name"
@@ -25,6 +34,37 @@ ActiveRecord::Schema.define(version: 20170814153120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_belges_on_user_id"
+  end
+
+  create_table "bookings", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.boolean "status"
+    t.text "message"
+    t.bigint "user_id"
+    t.bigint "belge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["belge_id"], name: "index_bookings_on_belge_id"
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "rating"
+    t.bigint "user_id"
+    t.bigint "belge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["belge_id"], name: "index_reviews_on_belge_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,5 +88,11 @@ ActiveRecord::Schema.define(version: 20170814153120) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "belge_categories", "belges"
+  add_foreign_key "belge_categories", "categories"
   add_foreign_key "belges", "users"
+  add_foreign_key "bookings", "belges"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "reviews", "belges"
+  add_foreign_key "reviews", "users"
 end
