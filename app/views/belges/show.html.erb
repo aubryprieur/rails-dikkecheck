@@ -1,9 +1,16 @@
-<h1>Belges#show</h1>
-<p>Find me in app/views/belges/show.html.erb</p>
-  <%= @belge.first_name %>
-  <%= @belge.last_name %>
+
+<h1><%= @belge.first_name %> <%= @belge.last_name %></h1>
+<div class="belge-img">
+  <% if @belge.photo? %>
+    <%= cl_image_tag @belge.photo.path, width: 200, height: 200, crop: :fill, :radius=>10 %>
+  <% end %>
+</div>
+ <p>
   <%= @belge.description %>
-  <%= @belge.price %>
+</p>
+<p>
+  <%= @belge.price %> Francs Belge
+</p>
 
 <%= link_to "All belges", belges_path %>
 
