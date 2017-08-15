@@ -5,7 +5,9 @@
   <%= @belge.description %>
   <%= @belge.price %>
 
-<%= link_to "All belges", belges_path %>
+
+<%= link_to "All Belgians", belges_path,  class: "btn btn-primary" %>
+<%= link_to "Add review", new_belge_review_path(@belge),  class: "btn btn-primary" %>
 
 <p>All Reviews :</p>
 
