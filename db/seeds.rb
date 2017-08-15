@@ -71,7 +71,7 @@ belges_attributes = [
     photo: "http://lorempixel.com/400/200/people/12",
     price:"35",
     user_id:"3"
-  },
+  }
 
 ]
 
