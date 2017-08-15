@@ -1,2 +1,9 @@
 <h1>Belges#show</h1>
 <p>Find me in app/views/belges/show.html.erb</p>
+  <%= @belge.first_name %>
+  <%= @belge.last_name %>
+  <%= @belge.description %>
+  <%= @belge.price %>
+
+<%= link_to "All belges", belges_path %>
+

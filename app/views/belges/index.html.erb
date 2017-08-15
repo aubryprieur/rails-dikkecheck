@@ -1,2 +1,9 @@
 <h1>Belges#index</h1>
 <p>Find me in app/views/belges/index.html.erb</p>
+<% @belges.each do |belge| %>
+  <h2> <%= belge.first_name %> </h2>
+  <h2> <%= belge.last_name %> </h2>
+  <p> <%= belge.description  %> </p>
+  <!-- Ajouter belge.photo quand attachinary sera pret -->
+  <p> <%= belge.price %> </p>
+<% end %>
