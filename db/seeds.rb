@@ -46,6 +46,23 @@ users_attributes = [
 User.create!(users_attributes)
 puts 'Finished!'
 
+puts 'Creating categories...'
+categories_attributes = [
+  {
+    name: "accent de Namur",
+  },
+
+  {
+    name: "accent Bruxelles",
+  },
+  {
+    name: "accent de charleroi",
+  },
+
+]
+Category.create!(categories_attributes)
+puts 'Finished!'
+
 puts 'Creating belges...'
 belges_attributes = [
   {
@@ -77,6 +94,30 @@ belges_attributes = [
 
 Belge.create!(belges_attributes)
 puts 'Finished!'
+
+
+puts 'Creating belge category...'
+belge_categories_attributes = [
+  {
+    category_id: "1",
+    belge_id: "1",
+  },
+  {
+    category_id: "2",
+    belge_id: "2",
+  },
+  {
+    category_id: "3",
+    belge_id: "3",
+  },
+
+]
+BelgeCategory.create!(belge_categories_attributes)
+puts 'Finished!'
+
+
+
+
 
 puts 'Creating reviews...'
 reviews_attributes = [
@@ -139,39 +180,7 @@ bookings_attributes = [
 Booking.create!(bookings_attributes)
 puts 'Finished!'
 
-puts 'Creating categories...'
-categories_attributes = [
-  {
-    name: "accent de Namur",
-  },
-
-  {
-    name: "accent Bruxelles",
-  },
-  {
-    name: "accent de charleroi",
-  },
-
-]
-Category.create!(categories_attributes)
-puts 'Finished!'
 
 
-puts 'Creating belge category...'
-belge_categories_attributes = [
-  {
-    category_id: "1",
-    belge_id: "1",
-  },
-  {
-    category_id: "2",
-    belge_id: "2",
-  },
-  {
-    category_id: "3",
-    belge_id: "3",
-  },
 
-]
-BelgeCategory.create!(belge_categories_attributes)
-puts 'Finished!'
+
