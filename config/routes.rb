@@ -3,11 +3,13 @@ Rails.application.routes.draw do
 
   resources :belge_categories
 
-  resources :reviews
+
 
   resources :bookings
 
-  resources :belges
+  resources :belges do
+    resources :reviews
+  end
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
