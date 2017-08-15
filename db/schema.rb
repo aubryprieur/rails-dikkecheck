@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20170814185751) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-  
+
   create_table "reviews", force: :cascade do |t|
     t.string "title"
     t.text "description"
@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20170814185751) do
   add_foreign_key "belge_categories", "belges"
   add_foreign_key "belge_categories", "categories"
   add_foreign_key "belges", "users"
+
   add_foreign_key "bookings", "belges"
   add_foreign_key "bookings", "users"
   add_foreign_key "reviews", "belges"
