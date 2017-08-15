@@ -56,7 +56,7 @@ categories_attributes = [
     name: "accent Bruxelles",
   },
   {
-    name: "accent de charleroi",
+    name: "accent de Charleroi",
   },
 
 ]
@@ -68,25 +68,35 @@ belges_attributes = [
   {
     first_name:"Benoit",
     last_name:"Poolvorde",
-    description: "bp@gmail.com",
+    description: "aime fumer, boire, et jouer dans des navets",
+    photo_url: 'http://res.cloudinary.com/copas/image/upload/c_crop/v1502817016/bp_ekutnj.jpg',
     price:"20",
     user_id:"1"
   },
   {
     first_name:"roi",
     last_name:"desbelges",
-    description: "rdb@gmail.com",
+    description: "j'aime le république",
+    photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502817049/rdb_do71tk.jpg',
     price:"50",
     user_id:"2"
   },
   {
     first_name:"frères",
     last_name:"Dardennes",
-    description: "fd@gmail.com",
+    description: "notre film préféré: on se calme et on boit frais à St Tropez",
     price:"35",
+    photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502817340/dardenne_y1jrju.jpg',
+    user_id:"3"
+  },
+  {
+    first_name:"Jean-claude",
+    last_name:"Van Damme",
+    description: "Aware",
+    price:"35",
+    photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
     user_id:"3"
   }
-
 ]
 
 Belge.create!(belges_attributes)
