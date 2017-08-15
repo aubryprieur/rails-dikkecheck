@@ -1,21 +1,12 @@
 
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 50%), url('https://www.streetpress.com/sites/default/files/field/image/olivier-von-hoffstadt-damiens-cover4.jpg');">
-  <div class="banner-content">
-    <div>
-      <%= image_tag "logo_white.png", id: "logo"%>
-    </div>
-    <div>
-      <%= image_tag "logo_text_white.png", id: "logo_text"%>
-    </div>    <p>Find a Belges</p>
-    <a class="btn btn-danger btn-lg">Search by localisation</a>
-  </div>
-</div>
+
 
 <div class="container">
   <div class="row">
+  <h1>Tous nos Dikkecheker :</h1>
     <% @belges.each do |belge| %>
       <div class="col-xs-6 col-sm-3">
-        <div class="card" style="background-image: linear-gradient(rgba(51,51,51,0.3), rgba(51,51,51,0.7)), url( '<% if @belge.photo? %> <%= cl_image_path @belge.photo.path %> <% end %>');">
+        <div class="card" style="background-image: linear-gradient(rgba(51,51,51,0.3), rgba(51,51,51,0.7)), url( '<% if belge.photo? %> <%= cl_image_path belge.photo.path %> <% end %>');">
           <div class="card-category"></div>
           <div class="card-description">
             <h2><%= belge.first_name %> <%= belge.last_name %></h2>

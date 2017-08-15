@@ -69,7 +69,6 @@ belges_attributes = [
     first_name:"Benoit",
     last_name:"Poolvorde",
     description: "bp@gmail.com",
-    photo: "http://lorempixel.com/400/200/people/5",
     price:"20",
     user_id:"1"
   },
@@ -77,7 +76,6 @@ belges_attributes = [
     first_name:"roi",
     last_name:"desbelges",
     description: "rdb@gmail.com",
-    photo: "http://lorempixel.com/400/200/people/8",
     price:"50",
     user_id:"2"
   },
@@ -85,7 +83,6 @@ belges_attributes = [
     first_name:"frères",
     last_name:"Dardennes",
     description: "fd@gmail.com",
-    photo: "http://lorempixel.com/400/200/people/12",
     price:"35",
     user_id:"3"
   }

@@ -6,6 +6,7 @@
     <div>
       <%= image_tag "logo_text_white.png", id: "logo_text"%>
     </div>    <p>Find a Belges</p>
-    <a class="btn btn-danger btn-lg">Search by localisation</a>
+    <%= link_to 'Search by localisation', belges_path, {class: "btn btn-danger btn-lg"} %>
+
   </div>
 </div>
