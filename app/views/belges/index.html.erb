@@ -1,10 +1,31 @@
-<h1>Belges#index</h1>
-<p>Find me in app/views/belges/index.html.erb</p>
-<% @belges.each do |belge| %>
-  <h2> <%= belge.first_name %> </h2>
-  <h2> <%= belge.last_name %> </h2>
-  <p> <%= belge.description  %> </p>
-  <!-- Ajouter belge.photo quand attachinary sera pret -->
-  <p> <%= belge.price %> </p>
-<% end %>
 
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 50%), url('https://www.streetpress.com/sites/default/files/field/image/olivier-von-hoffstadt-damiens-cover4.jpg');">
+  <div class="banner-content">
+    <div>
+      <%= image_tag "logo_white.png", id: "logo"%>
+    </div>
+    <div>
+      <%= image_tag "logo_text_white.png", id: "logo_text"%>
+    </div>    <p>Find a Belges</p>
+    <a class="btn btn-danger btn-lg">Search by localisation</a>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% 4.times do   %>
+      <% @belges.each do |belge| %>
+        <div class="col-xs-6 col-sm-3">
+          <div class="card" style="background-image: linear-gradient(rgba(51,51,51,0.3), rgba(51,51,51,0.7)), url( '<%= image_path belge.photo %>');">
+            <div class="card-category"></div>
+            <div class="card-description">
+              <h2><%= belge.first_name %> <%= belge.last_name %></h2>
+            </div>
+            <div class="card-price"> <p><%= belge.price %> €</p> </div>
+            <%= link_to nil, belge_path(belge), class: 'card-link' %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>
