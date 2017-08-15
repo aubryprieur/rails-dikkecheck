@@ -1,4 +1,4 @@
 class BelgeCategory < ApplicationRecord
-  belongs_to :category
-  belongs_to :belge
+  has_many :categories
+  has_many :belges
 end
