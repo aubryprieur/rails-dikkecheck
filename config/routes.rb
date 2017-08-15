@@ -1,4 +1,46 @@
 Rails.application.routes.draw do
+  get 'categories/index'
+
+  get 'categories/show'
+
+  get 'categories/new'
+
+  get 'categories/create'
+
+  get 'categories/edit'
+
+  get 'categories/update'
+
+  get 'categories/destroy'
+
+  get 'belge_categories/index'
+
+  get 'belge_categories/show'
+
+  get 'belge_categories/new'
+
+  get 'belge_categories/create'
+
+  get 'belge_categories/edit'
+
+  get 'belge_categories/update'
+
+  get 'belge_categories/destroy'
+
+  get 'reviews/index'
+
+  get 'reviews/show'
+
+  get 'reviews/new'
+
+  get 'reviews/create'
+
+  get 'reviews/edit'
+
+  get 'reviews/update'
+
+  get 'reviews/destroy'
+
   get 'bookings/index'
 
   get 'bookings/show'
