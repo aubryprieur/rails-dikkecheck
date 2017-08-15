@@ -13,31 +13,27 @@ class BelgesController < ApplicationController
 
   def create
     @belge = Belge.new(belge_params)
-       if @belge.save
-        redirect_to belge_path(@belge)
-       else
-        render :new
-      end
+    @belge.user = current_user
+    if @belge.save
+      redirect_to belge_path(@belge)
+    else
+      p @belge.errors
+      render :new
+    end
   end
 
   def edit
   end
 
   def update
-    if @belge.update(belge_params)
+    @belge.user = current_user
+    if @belge.user.update(belge_params)
         redirect_to belge_path(@belge)
        else
         render :new
       end
   end
 
-  def destroy
-    if @belge.destroy
-        redirect_to belges_path
-       else
-        render :new
-      end
-  end
 
   private
 

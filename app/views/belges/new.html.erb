@@ -1,2 +1,10 @@
 <h1>Belges#new</h1>
 <p>Find me in app/views/belges/new.html.erb</p>
+<div><%= simple_form_for @belge do |f| %>
+  <%= f.input :first_name %>
+  <%= f.input :last_name %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+  <% end %>
+</div>
