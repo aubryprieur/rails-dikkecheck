@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 puts 'Cleaning database...'
-User.destroy_all
-Belge.destroy_all
-Booking.destroy_all
-Review.destroy_all
-Category.destroy_all
 BelgeCategory.destroy_all
+Category.destroy_all
+Review.destroy_all
+Booking.destroy_all
+Belge.destroy_all
+User.destroy_all
 
 
 puts 'Creating users...'
