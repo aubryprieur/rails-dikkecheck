@@ -161,7 +161,7 @@ bookings_attributes = [
   {
     start_date: "2017/04/12",
     end_date: "2017/04/13",
-    status: "false",
+    status: "Demande en cours",
     message:  "dispo pour la journée ?",
     user_id: "3",
     belge_id: "1"
@@ -169,7 +169,7 @@ bookings_attributes = [
   {
     start_date: "2017/05/10",
     end_date: "2017/05/13",
-    status: "true",
+    status: "Confirmé",
     message:  "dispo pour le week-end pour faire la fête ?",
     user_id: "2",
     belge_id: "2"
@@ -177,7 +177,7 @@ bookings_attributes = [
   {
     start_date: "2017/08/12",
     end_date: "2017/08/13",
-    status: "true",
+    status: "Annulé",
     message:  "journée plage en belgique",
     user_id: "1",
     belge_id: "3"

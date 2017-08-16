@@ -5,16 +5,17 @@ Rails.application.routes.draw do
 
 
 
-  resources :bookings
 
   resources :belges do
     resources :reviews
+    resources :bookings
   end
 
   devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'pages#home'
+  get '/dashboard', to: 'profils#dashboard'
   mount Attachinary::Engine => "/attachinary"
 
 end
