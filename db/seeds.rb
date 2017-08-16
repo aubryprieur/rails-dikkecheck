@@ -16,179 +16,127 @@ BelgeCategory.destroy_all
 
 
 puts 'Creating users...'
-users_attributes = [
-  {
-    first_name:"pierre",
-    last_name:"dubois",
-    email: "toto@gmail.com",
-    password:"azerty",
-    password_confirmation:"azerty" ,
-    photo: "http://lorempixel.com/400/200/people/1"
-  },
-  {
-    first_name: "Bob",
-    last_name: "langlois",
-    email: "tata@gmail.com",
-    password: "qsdfgh",
-    password_confirmation: "qsdfgh",
-    photo: "http://lorempixel.com/400/200/people/2"
-  },
-    {
-    first_name: "Valerie",
-    last_name: "Dupont",
-    email: "valDup@gmail.com",
-    password: "wxcvbn",
-    password_confirmation: "wxcvbn",
-    photo: "http://lorempixel.com/400/200/people/10"
-  },
-
-]
-User.create!(users_attributes)
+user1 = User.create!(
+  first_name:"pierre",
+  last_name:"dubois",
+  email: "toto@gmail.com",
+  password:"azerty",
+  password_confirmation:"azerty" ,
+  photo: "http://lorempixel.com/400/200/people/1"
+  )
+user2 = User.create!(
+  first_name: "Bob",
+  last_name: "langlois",
+  email: "tata@gmail.com",
+  password: "qsdfgh",
+  password_confirmation: "qsdfgh",
+  photo: "http://lorempixel.com/400/200/people/2"
+  )
+user3 = User.create!(
+  first_name: "Valerie",
+  last_name: "Dupont",
+  email: "valDup@gmail.com",
+  password: "wxcvbn",
+  password_confirmation: "wxcvbn",
+  photo: "http://lorempixel.com/400/200/people/10"
+  )
 puts 'Finished!'
 
 puts 'Creating categories...'
-categories_attributes = [
-  {
-    name: "accent de Namur",
-  },
-
-  {
-    name: "accent Bruxelles",
-  },
-  {
-    name: "accent de Charleroi",
-  },
-
-]
-Category.create!(categories_attributes)
+category1 = Category.create!(name: "accent de Namur")
+category2 = Category.create!(name: "accent Bruxelles")
+category3 = Category.create!(name: "accent de Charleroi")
 puts 'Finished!'
 
 puts 'Creating belges...'
-belges_attributes = [
-  {
-    first_name:"Benoit",
-    last_name:"Poolvorde",
-    description: "aime fumer, boire, et jouer dans des navets",
-    photo_url: 'http://res.cloudinary.com/copas/image/upload/c_crop/v1502817016/bp_ekutnj.jpg',
-    price:"20",
-    address: "10 boulevard Basly Lens",
-    user_id:"1"
-  },
-  {
-    first_name:"roi",
-    last_name:"desbelges",
-    description: "j'aime le république",
-    photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502817049/rdb_do71tk.jpg',
-    price:"50",
-    address: "10 rue solferino Lille",
-    user_id:"2"
-  },
-  {
-    first_name:"frères",
-    last_name:"Dardennes",
-    description: "notre film préféré: on se calme et on boit frais à St Tropez",
-    price:"35",
-    photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502817340/dardenne_y1jrju.jpg',
-    address: "rue de la ferme Bruxelles",
-    user_id:"3"
-  },
-  {
-    first_name:"Jean-claude",
-    last_name:"Van Damme",
-    description: "Aware",
-    price:"35",
-    photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
-    address: "rue des wallons Bruxelles",
-    user_id:"3"
-  }
-]
-
-Belge.create!(belges_attributes)
+belge1 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge2 = Belge.create!(
+  first_name:"roi",
+  last_name:"desbelges",
+  description: "j'aime le république",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502817049/rdb_do71tk.jpg',
+  price:"50",
+  address: "10 rue solferino Lille",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
 puts 'Finished!'
 
 
 puts 'Creating belge category...'
-belge_categories_attributes = [
-  {
-    category_id: "1",
-    belge_id: "1",
-  },
-  {
-    category_id: "2",
-    belge_id: "2",
-  },
-  {
-    category_id: "3",
-    belge_id: "3",
-  },
-
-]
-BelgeCategory.create!(belge_categories_attributes)
+BelgeCategory.create!(belge: belge1, category: category1)
+BelgeCategory.create!(belge: belge2, category: category2)
+BelgeCategory.create!(belge: belge3, category: category3)
 puts 'Finished!'
 
 
-
-
-
 puts 'Creating reviews...'
-reviews_attributes = [
-  {
-    title: "Bonne soirée",
-    description: "Bel accent et bonnes blagues!",
-    rating: "4",
-    user_id:  "1",
-    belge_id: "1"
-  },
-  {
-    title: "ok pas mal",
-    description: "trop sérieux, trop de protocole",
-    rating: "2",
-    user_id:  "2",
-    belge_id: "1"
-  },
-    {
-    title: "sympa",
-    description: "grace a benoit , j'ai decouvert pleins de nouvelles bières belges!",
-    rating: "5",
-    user_id:  "2",
-    belge_id: "1"
-  },
-
-]
-Review.create!(reviews_attributes)
+Review.create!(
+  title: "Bonne soirée",
+  description: "Bel accent et bonnes blagues!",
+  rating: "4",
+  belge: belge1,
+  user: user1
+  )
+Review.create!(
+  title: "ok pas mal",
+  description: "trop sérieux, trop de protocole",
+  rating: "2",
+  belge: belge2,
+  user: user2
+  )
+Review.create!(
+  title: "sympa",
+  description: "Effectivement aware!",
+  rating: "5",
+  belge: belge3,
+  user: user3
+  )
 puts 'Finished!'
 
 
 
 puts 'Creating bookings...'
-bookings_attributes = [
-  {
-    start_date: "2017/04/12",
-    end_date: "2017/04/13",
-    status: "Demande en cours",
-    message:  "dispo pour la journée ?",
-    user_id: "3",
-    belge_id: "1"
-  },
-  {
-    start_date: "2017/05/10",
-    end_date: "2017/05/13",
-    status: "Confirmé",
-    message:  "dispo pour le week-end pour faire la fête ?",
-    user_id: "2",
-    belge_id: "2"
-  },
-  {
-    start_date: "2017/08/12",
-    end_date: "2017/08/13",
-    status: "Annulé",
-    message:  "journée plage en belgique",
-    user_id: "1",
-    belge_id: "3"
-  },
-
-]
-Booking.create!(bookings_attributes)
+Booking.create!(
+  start_date: "2017/04/12",
+  end_date: "2017/04/13",
+  status: "Demande en cours",
+  message:  "dispo pour la journée ?",
+  belge: belge1,
+  user: user1
+  )
+Booking.create!(
+  start_date: "2017/04/12",
+  end_date: "2017/04/13",
+  status: "Demande en cours",
+  message:  "dispo pour la journée ?",
+  belge: belge2,
+  user: user2
+  )
+Booking.create!(
+  start_date: "2017/04/12",
+  end_date: "2017/04/13",
+  status: "Demande en cours",
+  message:  "dispo pour la journée ?",
+  belge: belge3,
+  user: user3
+  )
 puts 'Finished!'
 
 
