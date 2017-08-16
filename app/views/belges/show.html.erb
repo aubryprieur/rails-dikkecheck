@@ -12,9 +12,14 @@
   <%= @belge.price %> Francs Belge
 </p>
 
+<% @belge.categories.each do |category| %>
+  <%= category.name %>
+<% end %>
 
+<div>
 <%= link_to "All Belgians", belges_path,  class: "btn btn-primary" %>
 <%= link_to "Add review", new_belge_review_path(@belge),  class: "btn btn-primary" %>
+</div>
 
 <p>All Reviews :</p>
 
