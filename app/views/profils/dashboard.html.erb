@@ -14,6 +14,9 @@
 <p>Dates: <%= booking.start_date %> to <%= booking.end_date %></p>
 <p>Message: <%= booking.message %></p>
 <p>Status: <%= booking.status %></p>
+<% if booking.status == "Demande acceptée" %>
+<%= link_to "Add review", new_belge_review_path(booking.belge),  class: "btn btn-primary btn-review" %>
+<% end %>
 <% end %>
 
 
