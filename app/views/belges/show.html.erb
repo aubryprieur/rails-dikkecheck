@@ -18,6 +18,13 @@
         <%= @belge.price %> Francs Belge
       </p>
     </div>
+    <div class="belgian-price">
+      <p> <strong>Categories :</strong>
+        <% @belge.categories.each do |category| %>
+          <%= category.name %>
+        <% end %>
+      </p>
+    </div>
   </div>
   <div class="belgian-reviews-title"> <strong><p>All Reviews :</p></strong> </div>
   <div class="row", id="reviews-row">
