@@ -1,0 +1,71 @@
+.list {
+  background-color: white;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid #DCDFE0;
+  border-radius: 1px;
+  background-color: #FFFEFE;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.message:hover {
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.message:last-child {
+  border-bottom: none;
+}
+.message-body {
+  flex-grow: 1;
+}
+.message-name {
+  padding-left: 30px;
+  min-width: 100px;
+}
+.message-name h3 {
+  font-size: 13px;
+  margin-bottom: 0px;
+}
+.message-name p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 0.6;
+  margin-top: 5px;
+}
+.message-body {
+  padding-left: 10px;
+  font-size: 13px;
+  color: rgba(0,0,0,0.7);
+}
+.message-body {
+  padding-left: 20px;
+  color: rgba(0,0,0,0.4);
+}
+.message-body strong{
+  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,0.9);
+}
+.message-body p {
+  margin: 6px 0;
+}
+.message-status {
+  font-size: 14px;
+  font-weight: bold;
+  text-align: right;
+}
+.status.accepted {
+  color: #008000;
+}
+.status.declined {
+  color: red;
+}
+.status.pending {
+  color: lightgrey;
+}
