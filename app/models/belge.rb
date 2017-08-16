@@ -5,4 +5,7 @@ class Belge < ApplicationRecord
   has_many :bookings
   has_many :categories, through: :belge_categories
   has_attachment :photo
+
+  geocoded_by :address
+  after_validation :geocode, if: :address_changed?
 end
