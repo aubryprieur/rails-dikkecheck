@@ -1,7 +1,8 @@
-.list {
-  background-color: white;
-  padding: 40px;
-  margin-bottom: 30px;
+.avatar-large {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  padding-right: 30px;
 }
 
 .message {
@@ -9,7 +10,7 @@
   align-items: center;
   padding: 20px 30px;
   border-bottom: 1px solid #DCDFE0;
-  border-radius: 1px;
+  border-radius: 3px;
   background-color: #FFFEFE;
   margin-bottom: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -27,7 +28,7 @@
 }
 .message-name {
   padding-left: 30px;
-  min-width: 100px;
+  min-width: 30px;
 }
 .message-name h3 {
   font-size: 13px;
@@ -36,21 +37,22 @@
 .message-name p {
   font-size: 13px;
   font-weight: lighter;
-  opacity: 0.6;
-  margin-top: 5px;
+  opacity: 1;
+  margin-top: 12px;
 }
 .message-body {
+  margin-left: 30px;
   padding-left: 10px;
   font-size: 13px;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0,0,0,1);
 }
 .message-body {
   padding-left: 20px;
-  color: rgba(0,0,0,0.4);
+  color: rgba(0,0,0,1);
 }
 .message-body strong{
-  color: rgba(0,0,0,0.9);
-  color: rgba(0,0,0,0.9);
+  color: rgba(0,0,0,1);
+  color: rgba(0,0,0,1);
 }
 .message-body p {
   margin: 6px 0;
@@ -59,6 +61,7 @@
   font-size: 14px;
   font-weight: bold;
   text-align: right;
+  margin-top: 12px;
 }
 .status.accepted {
   color: #008000;
@@ -67,5 +70,5 @@
   color: red;
 }
 .status.pending {
-  color: lightgrey;
+  color: blue;
 }
