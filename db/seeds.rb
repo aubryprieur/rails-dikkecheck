@@ -71,6 +71,7 @@ belges_attributes = [
     description: "aime fumer, boire, et jouer dans des navets",
     photo_url: 'http://res.cloudinary.com/copas/image/upload/c_crop/v1502817016/bp_ekutnj.jpg',
     price:"20",
+    address: "10 boulevard Basly Lens",
     user_id:"1"
   },
   {
@@ -79,6 +80,7 @@ belges_attributes = [
     description: "j'aime le république",
     photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502817049/rdb_do71tk.jpg',
     price:"50",
+    address: "10 rue solferino Lille",
     user_id:"2"
   },
   {
@@ -87,6 +89,7 @@ belges_attributes = [
     description: "notre film préféré: on se calme et on boit frais à St Tropez",
     price:"35",
     photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502817340/dardenne_y1jrju.jpg',
+    address: "rue de la ferme Bruxelles",
     user_id:"3"
   },
   {
@@ -95,6 +98,7 @@ belges_attributes = [
     description: "Aware",
     price:"35",
     photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+    address: "rue des wallons Bruxelles",
     user_id:"3"
   }
 ]

@@ -1,10 +1,16 @@
 class BelgesController < ApplicationController
   before_action :set_belge, only: [:show, :edit]
   def index
-    @belges = Belge.all
+    @belges = Belge.where.not(latitude: nil, longitude: nil)
+
+    @hash = Gmaps4rails.build_markers(@belges) do |belge, marker|
+      marker.lat belge.latitude
+      marker.lng belge.longitude
+    end
   end
 
   def show
+    @belge_coordinates = { lat: @belge.latitude, lng: @belge.longitude }
   end
 
   def new
