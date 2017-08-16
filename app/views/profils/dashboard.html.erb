@@ -1,37 +1,55 @@
 <div class="container">
-<div class="row">
-<div class="col-xs-12">
-<h1>My Dashboard</h1>
+  <br>
+  <h2 class="text-center">My Dashboard</h2>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <h3 class="text-center">My bookings</h3>
+      <br>
+      <% @bookings.each do |booking| %>
+        <div class="message">
+          <img class="avatar-large" src="images/cecile.png">
+          <div class="message-name">
+            <h3>Avec: <%= booking.belge.first_name %> <%= booking.belge.last_name %></h3>
+          </div>
+          <div class="message-body">
+            <p>Message: <%= booking.message %></p>
+            <p>Dates: <%= booking.start_date %> to <%= booking.end_date %></p>
+            <p>
+              I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+            </p>
+          </div>
+          <div class="message-status">
+            <p>Status: <%= booking.status %></p>
+              <% if booking.status == "Demande acceptée" %>
+              <%= link_to "Add review", new_belge_review_path(booking.belge),  class: "btn btn-primary btn-review" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+      <div class="list">
+        <h3 class="text-center">My Belgians</h3>
+        <br>
+        <% @belges.each do |belge| %>
+          <h3><%= belge.first_name %> - <%= belge.last_name %></h3>
+          <% belge.bookings.each do |booking| %>
+          <p>Status:<%= booking.status %></p>
+          <p>Dates : <%= booking.start_date %> to <%= booking.end_date %></p>
+          <p>Message: <%= booking.message %></p>
+          <%= link_to "Change status", edit_belge_booking_path(belge.id, booking.id), class: 'btn btn-primary' %>
+          <% end %>
+        <% end %>
 
-<h2>My profil</h2>
-<h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
-<p><%= current_user.email %></p>
-
-<h2>My bookings</h2>
-
-<% @bookings.each do |booking| %>
-<h3>Avec: <%= booking.belge.first_name %> <%= booking.belge.last_name %></h3>
-<p>Dates: <%= booking.start_date %> to <%= booking.end_date %></p>
-<p>Message: <%= booking.message %></p>
-<p>Status: <%= booking.status %></p>
-<% if booking.status == "Demande acceptée" %>
-<%= link_to "Add review", new_belge_review_path(booking.belge),  class: "btn btn-primary btn-review" %>
-<% end %>
-<% end %>
-
-
-<h2>My Belgians</h2>
-<% @belges.each do |belge| %>
-<h3><%= belge.first_name %> - <%= belge.last_name %></h3>
-<% belge.bookings.each do |booking| %>
-  <p>Status:<%= booking.status %></p>
-  <p>Dates : <%= booking.start_date %> to <%= booking.end_date %></p>
-  <p>Message: <%= booking.message %></p>
-  <%= link_to "Change status", edit_belge_booking_path(belge.id, booking.id), class: 'btn btn-primary' %>
-<% end %>
-<% end %>
+      </div>
+    </div>
+  </div>
 </div>
-</div>
-</div>
 
 
+
+
+
+<!--       <h2>My profil</h2>
+      <h3><%= current_user.first_name %> <%= current_user.last_name %></h3>
+      <p><%= current_user.email %></p> -->
