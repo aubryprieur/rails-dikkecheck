@@ -1,33 +1,43 @@
-
-<h1><%= @belge.first_name %> <%= @belge.last_name %></h1>
-<div class="belge-img">
-  <% if @belge.photo? %>
-    <%= cl_image_tag @belge.photo.path, width: 200, height: 200, crop: :fill, :radius=>10 %>
-  <% end %>
+<div class=container>
+  <div class="belgian-show">
+    <div class="belgian-title">
+      <h1><%= @belge.first_name %> <%= @belge.last_name %></h1>
+    </div>
+    <div class="belge-img">
+      <% if @belge.photo? %>
+      <%= cl_image_tag @belge.photo.path, width: 200, height: 200, crop: :fill, :radius=>10 %>
+      <% end %>
+    </div>
+    <div class="belgian-description">
+      <p> <strong>Description :</strong>
+        <%= @belge.description %>
+      </p>
+    </div>
+    <div class="belgian-price">
+      <p> <strong>Prix TTC :</strong>
+        <%= @belge.price %> Francs Belge
+      </p>
+    </div>
+    <div class="belgian-price">
+      <p> <strong>Categories :</strong>
+        <% @belge.categories.each do |category| %>
+          <%= category.name %>
+        <% end %>
+      </p>
+    </div>
+  </div>
+  <div class="belgian-reviews-title"> <strong><p>All Reviews :</p></strong> </div>
+  <div class="row", id="reviews-row">
+    <% @belge.reviews.each do |review| %>
+    <div class="col-xs-12, col-sm-4">
+      <p><strong> Title : </strong><%= review.title %></p>
+      <p><strong> Description : </strong><%= review.description %></p>
+      <p><strong> Rating : </strong><%= review.rating %></p>
+    </div>
+    <% end %>
+  </div>
+  <div class= "btn-show">
+  <%= link_to "All Belgians", belges_path,  class: "btn btn-primary btn-all" %>
+  <%= link_to "Add review", new_belge_review_path(@belge),  class: "btn btn-primary btn-review" %>
+  </div>
 </div>
- <p>
-  <%= @belge.description %>
-</p>
-<p>
-  <%= @belge.price %> Francs Belge
-</p>
-
-<% @belge.categories.each do |category| %>
-  <%= category.name %>
-<% end %>
-
-<div>
-<%= link_to "All Belgians", belges_path,  class: "btn btn-primary" %>
-<%= link_to "Add review", new_belge_review_path(@belge),  class: "btn btn-primary" %>
-</div>
-
-<p>All Reviews :</p>
-
-<% @belge.reviews.each do |review| %>
-  <p><%= review.title %></p>
-  <p><%= review.description %></p>
-  <p><%= review.rating %></p>
-  <% end %>
-
-
-
