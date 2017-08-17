@@ -4,7 +4,7 @@ class BelgeMailer < ApplicationMailer
 
     mail(
       to:       @belge.user.email,
-      subject:  "Restaurant #{@belge.first_name} #{@belge.last_name} created!"
+      subject:  "création d'un Dikkechecker: #{@belge.first_name} #{@belge.last_name}!"
     )
   end
 end
