@@ -2,53 +2,58 @@
   <br>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
-      <h3 class="text-center">My bookings - <%= current_user.first_name %> <%= current_user.last_name %></h3>
+      <h2 class="text-center">Dashboard - <%= current_user.first_name %> <%= current_user.last_name %></h2>
       <br>
       <div class="col-xs-12 col-sm-12 col-md-12">
-        <h3>My request</h3>
+        <h3>Mes réservations </h3>
         <br>
         <% @bookings.each do |booking| %>
-          <div class="message">
-            <%= cl_image_tag booking.belge.photo.path, width: 50, height: 50, crop: :fill, radius: 100%>
-            <div class="message-name text-center">
-              <p><%= booking.start_date %> - <%= booking.end_date %></p>
-            </div>
-            <div class="message-body">
-              <h4><%= booking.belge.first_name %> <%= booking.belge.last_name %></h4>
-            </div>
-            <div class="message-status">
-              <p><%= booking.status %></p>
-                <% if booking.status == "Demande acceptée" %>
-                <%= link_to "Add review", new_belge_review_path(booking.belge),  class: "btn btn-danger btn-review" %>
+          <div class="row">
+            <div class="message">
+              <% if booking.belge.photo %>
+                <%= cl_image_tag booking.belge.photo.path, width: 50, height: 50, crop: :fill, radius: 100%>
               <% end %>
+              <div class="message-name text-center">
+                <h4><%= booking.belge.first_name %> <%= booking.belge.last_name %></h4>
+              </div>
+              <div class="message-body">
+                <p><%= booking.start_date %> - <%= booking.end_date %></p>
+              </div>
+              <div class="message-status">
+                <p><%= booking.status %></p>
+                  <% if booking.status == "Demande acceptée" %>
+                  <%= link_to "Add review", new_belge_review_path(booking.belge),  class: "btn btn-danger btn-review" %>
+                <% end %>
+              </div>
             </div>
           </div>
         <% end %>
       </div>
     </div>
-
-
-<!--     <div class="col-xs-12 col-sm-12 col-md-12">
-      <br>
-      <h3>My request</h3>
-      <br>
-      <div class="list">
+    <div class="col-xs-12 col-sm-12 col-md-12">
         <h3>My Belgians</h3>
         <br>
         <% @belges.each do |belge| %>
-          <h3><%= belge.first_name %> - <%= belge.last_name %></h3>
+          <h3><%= belge.first_name %> <%= belge.last_name %></h3>
           <% belge.bookings.each do |booking| %>
-          <p>Status:<%= booking.status %></p>
-          <p>Dates : <%= booking.start_date %> to <%= booking.end_date %></p>
-          <p>Message: <%= booking.message %></p>
-          <%= link_to "Change status", edit_belge_booking_path(belge.id, booking.id), class: 'btn btn-primary' %>
+            <div class="row">
+              <div class="message">
+                <%= cl_image_tag booking.user.facebook_picture_url, class: "avatar-large"%>
+                <div class="message-name text-center">
+                  <h4><%=booking.user.first_name%> <%=booking.user.last_name%></h4>
+                </div>
+                <div class="message-body">
+                  <p>Dates : <%= booking.start_date %> to <%= booking.end_date %></p>
+                </div>
+                <div class="message-status">
+                  <%= link_to "Refus", edit_belge_booking_path(belge.id, booking.id), class: 'btn btn-default' %>
+                  <%= link_to "Accept", accept_booking_path(id: booking.id), :method => :post, class: 'btn btn-success' %>
+                </div>
+              </div>
+            </div>
           <% end %>
         <% end %>
-
-      </div>
-    </div> -->
-
-
+    </div>
   </div>
 </div>
 

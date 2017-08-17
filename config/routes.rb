@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :belge_categories
 
 
-
+  post 'accept_booking', to: "bookings#accept"
 
   resources :belges do
     resources :reviews
@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
 
   root to: 'pages#home'
-  get '/dashboard', to: 'profils#dashboard'
+  get 'dashboard', to: 'profils#dashboard'
   mount Attachinary::Engine => "/attachinary"
 
 end
