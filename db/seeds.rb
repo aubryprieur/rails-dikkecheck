@@ -76,6 +76,114 @@ belge3 = Belge.create!(
   address: "rue des wallons Bruxelles",
   user: User.all.to_a.sample
   )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
+belge3 = Belge.create!(
+  first_name:"Jean-claude",
+  last_name:"Van Damme",
+  description: "Aware",
+  price:"35",
+  photo_url: 'http://res.cloudinary.com/copas/image/upload/v1502813189/apomm4thzatowgocyx1d.jpg',
+  address: "rue des wallons Bruxelles",
+  user: User.all.to_a.sample
+  )
 
 puts 'Finished!'
 
