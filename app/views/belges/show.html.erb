@@ -35,4 +35,14 @@
     </div>
   </div>
   <%= link_to "All Belgians", belges_path,  class: "btn btn-primary btn-all" %>
+<div class="Review-title">Reviews</div>
+<div class="reviews">
+<% @belge.reviews.each do |review| %>
+<strong><p>Title : </strong> <%= review.title %></p>
+<strong><p>Description : </strong> <%= review.description %></p>
+<strong><p>Rating : </strong> <%= review.rating %></p>
+<% end %>
+</div>
+
+
 </div>
