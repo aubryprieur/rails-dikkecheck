@@ -6,16 +6,20 @@
     <div>
       <%= image_tag "logo_text_white.png", id: "logo_text"%>
     </div>
-    <p>Find your belgian friend</p>
+    <p>Rent a Belgian to spend a wonderful evening </p>
     <form class="form-inline" action='belges' autocomplete="on">
       <label class="sr-only" for="inlineFormInput"></label>
-      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name="city" placeholder="Type a city">
-      <button type="submit" class="btn btn-primary">Search</button>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0 input-lg" id="inlineFormInput" name="city" placeholder="Search by city">
+      <button type="submit" class="btn btn-danger btn-lg">Search</button>
     </form>
   </div>
 </div>
 <div class="container">
-<h1>Dikkecheker Highlights</h1>
+<br>
+<br>
+<h1 class="text-center">Les belges les plus demandés</h1>
+<br>
+<br>
   <div class="row">
     <% @belges.each do |belge| %>
       <%= render 'shared/card', belge: belge %>
