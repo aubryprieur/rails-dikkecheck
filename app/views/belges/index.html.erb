@@ -2,7 +2,7 @@
   <div class="cards_container">
     <div class="row">
       <div class="col-xs-12">
-        <form class="form-inline form-in-show text-center" action='belges'>
+        <form class="form-inline form-in-show text-center" action='belges' autocomplete="on">
           <input type="text" class="form-control" id="inlineFormInput" name="city" placeholder="Search by city">
           <button type="submit" class="btn btn-danger">Search</button>
         </form>
@@ -20,6 +20,7 @@
     <div id="map"></div>
   </div>
 </div>
+
 <% content_for(:after_js) do %>
   <%= javascript_tag do %>
     $(document).ready(function() {
