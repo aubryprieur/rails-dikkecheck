@@ -35,7 +35,10 @@ class BookingsController < ApplicationController
     redirect_to dashboard_path
   end
 
-  def destroy
+  def accept
+    id = params[:id].to_i
+    Booking.find(id).update_attribute(:status, 'Demande acceptée')
+    redirect_back(fallback_location: root_path)
   end
 
     private

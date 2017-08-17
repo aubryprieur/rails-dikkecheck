@@ -2,7 +2,7 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  padding-right: 30px;
+  padding-right: 0px;
 }
 
 .message {
@@ -14,10 +14,6 @@
   background-color: #FFFEFE;
   margin-bottom: 8px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-}
-
-.message:hover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
 
 .message:last-child {

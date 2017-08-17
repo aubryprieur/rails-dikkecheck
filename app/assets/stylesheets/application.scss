@@ -14,6 +14,10 @@
 @import "components/index";
 @import "pages/index";
 
+html, body {
+  min-height: 100%;
+}
+
 .facebook_link {
   color: white;
 }
@@ -22,3 +26,4 @@
   color: white;
   text-decoration: none;
 }
+
