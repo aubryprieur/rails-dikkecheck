@@ -11,6 +11,7 @@ class BelgesController < ApplicationController
     @hash = Gmaps4rails.build_markers(@belges) do |belge, marker|
       marker.lat belge.latitude
       marker.lng belge.longitude
+      marker.infowindow belge.first_name + " " + belge.last_name
     end
   end
 
