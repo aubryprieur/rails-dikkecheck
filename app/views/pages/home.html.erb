@@ -6,9 +6,11 @@
     <div>
       <%= image_tag "logo_text_white.png", id: "logo_text"%>
     </div>
-    <p>Find a Belges</p>
-
-    <%= link_to 'Search by localisation', belges_path, {class: "btn btn-danger btn-lg"} %>
+    <p>Find your belgian friend</p>
+    <form class="form-inline" action='belges'>
+      <label class="sr-only" for="inlineFormInput"></label>
+      <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" name="city" placeholder="Type a city">
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
   </div>
 </div>
-
