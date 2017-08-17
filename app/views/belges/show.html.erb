@@ -1,43 +1,41 @@
-<div class=container>
-  <div class="belgian-show">
-    <div class="belgian-title">
-      <h1><%= @belge.first_name %> <%= @belge.last_name %></h1>
-    </div>
-    <div class="belge-img">
-      <% if @belge.photo? %>
-      <%= cl_image_tag @belge.photo.path, width: 200, height: 200, crop: :fill, :radius=>10 %>
-      <% end %>
-    </div>
-    <div class="belgian-description">
-      <p> <strong>Description :</strong>
-        <%= @belge.description %>
-      </p>
-    </div>
-    <div class="belgian-price">
-      <p> <strong>Prix TTC :</strong>
-        <%= @belge.price %> Francs Belge
-      </p>
-    </div>
-    <div class="belgian-price">
-      <p> <strong>Categories :</strong>
-        <% @belge.categories.each do |category| %>
-          <%= category.name %>
+<div class="container text-center belge_cont">
+  <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <div >
+        <% if @belge.photo? %>
+        <%= cl_image_tag @belge.photo.path, width: 200, height: 200, crop: :fill, :radius=>10, class: 'card-img-top' %>
         <% end %>
-      </p>
+        <div class="card-block">
+          <h4 class="card-title"><%= @belge.first_name %> <%= @belge.last_name %></h4>
+          <p class="card-text description"><%= @belge.description %></p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item"><p><strong>Categories :</strong>
+            <% @belge.categories.each do |category| %>
+            <%= category.name %>
+          <% end %></li>
+          <li class="list-group-item"><strong>Prix TTC :</strong><%= @belge.price %>  euros</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-6">
+      <div  >
+        <div class="card-block book_form">
+          <h4 class="card-title">Booking</h4>
+          <div class="card-text">
+            <%= simple_form_for [@belge, @booking] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true, class: 'form-group'  %>
+            <%= f.input :end_date, as: :date, html5: true, class: 'form-group'  %>
+            <%= f.input :message, class: 'form-control' %>
+            <%= f.button :submit, class: 'btn btn-primary' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="belgian-reviews-title"> <strong><p>All Reviews :</p></strong> </div>
-  <div class="row", id="reviews-row">
-    <% @belge.reviews.each do |review| %>
-    <div class="col-xs-12, col-sm-4">
-      <p><strong> Title : </strong><%= review.title %></p>
-      <p><strong> Description : </strong><%= review.description %></p>
-      <p><strong> Rating : </strong><%= review.rating %></p>
-    </div>
-    <% end %>
-  </div>
-  <div class= "btn-show">
-  <%= link_to "Request", new_belge_booking_path(@belge),  class: "btn btn-primary btn-all" %>
   <%= link_to "All Belgians", belges_path,  class: "btn btn-primary btn-all" %>
-  </div>
 </div>
+
+
+

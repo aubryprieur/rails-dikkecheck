@@ -11,6 +11,7 @@ class BelgesController < ApplicationController
 
   def show
     @belge_coordinates = { lat: @belge.latitude, lng: @belge.longitude }
+    @booking = Booking.new
   end
 
   def new
