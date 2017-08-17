@@ -1,6 +1,7 @@
 class BelgesController < ApplicationController
   before_action :set_belge, only: [:show, :edit]
   def index
+
     @belges = Belge.where.not(latitude: nil, longitude: nil)
 
     @hash = Gmaps4rails.build_markers(@belges) do |belge, marker|
@@ -20,7 +21,6 @@ class BelgesController < ApplicationController
   def create
     @belge = Belge.new(belge_params)
     @belge.user = current_user
-
     if @belge.save
       redirect_to belge_path(@belge)
     else
@@ -50,6 +50,6 @@ class BelgesController < ApplicationController
   end
 
   def belge_params
-    params.require(:belge).permit(:first_name, :last_name, :description, :photo, :price, :user_id, belge_category_ids: [] )
+    params.require(:belge).permit(:first_name, :last_name, :description, :photo, :price, :address, :user_id, belge_category_ids: [] )
   end
 end
