@@ -76,6 +76,7 @@ belge3 = Belge.create!(
   address: "rue des wallons Bruxelles",
   user: User.all.to_a.sample
   )
+
 puts 'Finished!'
 
 
