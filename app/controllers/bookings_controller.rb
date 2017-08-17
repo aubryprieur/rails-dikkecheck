@@ -24,8 +24,7 @@ class BookingsController < ApplicationController
   end
 
   def edit
-        @belge = Belge.find(params[:belge_id])
-
+    @belge = Belge.find(params[:belge_id])
     @booking = Booking.find(params[:id])
   end
 

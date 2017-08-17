@@ -1,23 +1,32 @@
 .belgian-show {
   text-align: center;
-  background: white;
-  width: 600px;
-  height: 520px;
+  // background: white;
+  // width: 600px;
+  // height: 520px;
   margin-left: auto;
   margin-right: auto;
+  // margin-top: 20px;
+}
+
+.belgian_booking {
   margin-top: 20px;
 }
 
 .belgian-title {
-  margin-top: 30px;
+  // margin-top: 30px;
   margin-bottom: 30px;
   padding-top: 8px;
   text-transform: uppercase;
 }
 
+.belgian-title > h1 {
+  font-size: 20px;
+}
+
 
 .belge-img {
   margin-bottom: 30px;
+  margin-top: 20px;
 }
 
 .belgian-reviews-title {
@@ -49,3 +58,20 @@
 .btn-review {
   margin-top: 10px;
 }
+
+.belge_cont {
+  margin-top: 50px;
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+}
+
+.description {
+  font-style: italic;
+}
+
+
+
+
+
+
