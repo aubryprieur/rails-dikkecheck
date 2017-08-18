@@ -30,9 +30,9 @@ class BelgesController < ApplicationController
     @belge.user = current_user
     if @belge.save
       BelgeMailer.creation_confirmation(@belge).deliver_now
-      redirect_to belge_path(@belge)
+      redirect_to dashboard_path
     else
-      p @belge.errors
+
       render :new
     end
   end
