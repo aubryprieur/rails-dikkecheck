@@ -1,4 +1,5 @@
 class BelgesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_belge, only: [:show, :edit]
   def index
 
@@ -28,6 +29,7 @@ class BelgesController < ApplicationController
     @belge = Belge.new(belge_params)
     @belge.user = current_user
     if @belge.save
+      BelgeMailer.creation_confirmation(@belge).deliver_now
       redirect_to belge_path(@belge)
     else
       p @belge.errors

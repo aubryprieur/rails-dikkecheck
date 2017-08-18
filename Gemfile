@@ -28,6 +28,8 @@ gem 'cloudinary', '1.1.7'
 gem 'attachinary', github: 'assembler/attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem 'postmark-rails'
+gem 'gibbon'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -38,4 +40,5 @@ group :development, :test do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem "better_errors"
   gem "binding_of_caller"
+  gem "letter_opener"
 end

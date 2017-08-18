@@ -1,0 +1,17 @@
+<p>Bonjour <%= @belge.user.first_name %> <%= @belge.user.last_name %></p>
+
+<p>Vous avez créé un Dikkechecker <strong><%= @belge.first_name %> <%= @belge.last_name %> </strong> :</p>
+<ul>
+  <li>Tarif: <%= @belge.price %> € </li>
+  <li>Description: <%= @belge.description %></li>
+  <li>Description: <%= @belge.address %></li>
+</ul>
+
+<p>Rendez-vous sur le site pour voir la fiche de votre Dikkechecker:
+<%= link_to "voir la fiche",belge_url(@belge) %></p>
+<p>Pour louer un Dikkechecker:
+<%= link_to "voir nos Dikkechecker",belges_url %></p>
+
+
+
+<p>See ya!</p>
