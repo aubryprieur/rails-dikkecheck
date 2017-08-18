@@ -19,7 +19,7 @@ puts 'Creating users...'
 user1 = User.create!(
   first_name:"pierre",
   last_name:"dubois",
-  email: "toto@gmail.com",
+  email: "gtrupin@gmail.com",
   password:"azerty",
   password_confirmation:"azerty" ,
   photo: "http://lorempixel.com/400/200/people/1"
@@ -27,7 +27,7 @@ user1 = User.create!(
 user2 = User.create!(
   first_name: "Bob",
   last_name: "langlois",
-  email: "tata@gmail.com",
+  email: "julie.duhayon@gmail.com",
   password: "qsdfgh",
   password_confirmation: "qsdfgh",
   photo: "http://lorempixel.com/400/200/people/2"
@@ -35,7 +35,7 @@ user2 = User.create!(
 user3 = User.create!(
   first_name: "Valerie",
   last_name: "Dupont",
-  email: "valDup@gmail.com",
+  email: "contact@copas.coop",
   password: "wxcvbn",
   password_confirmation: "wxcvbn",
   photo: "http://lorempixel.com/400/200/people/10"
