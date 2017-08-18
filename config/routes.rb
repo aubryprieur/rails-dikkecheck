@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
 
   post 'accept_booking', to: "bookings#accept"
+  post 'refus_booking', to: "bookings#refus"
 
   resources :belges do
     resources :reviews

@@ -46,8 +46,8 @@
                   <p>Dates : <%= booking.start_date %> to <%= booking.end_date %></p>
                 </div>
                 <div class="message-status">
-                  <%= link_to "Refus", edit_belge_booking_path(belge.id, booking.id), class: 'btn btn-default' %>
-                  <%= link_to "Accept", accept_booking_path(id: booking.id), :method => :post, class: 'btn btn-success' %>
+                  <%= link_to "Refus", refus_booking_path(id: booking.id), :method => :post, class: 'btn btn-default' %>
+                  <%= link_to "Accept", accept_booking_path(id: booking.id), :method => :post, class: 'btn btn-danger' %>
                 </div>
               </div>
             </div>
