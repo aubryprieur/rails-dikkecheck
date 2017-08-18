@@ -1,0 +1,235 @@
+.grid-presentation {
+  display: grid;
+  grid-template-rows: 350px 90px 600px;
+  grid-template-columns: 1fr 350px;
+}
+
+// BELGE PRESENTATION ##############
+
+.belge-presentation {
+  grid-row: 1 / span 1;
+  grid-column: 1 / span 1;
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 30px;
+  min-width: 10px;
+  margin-right: 20px;
+  padding-right: 40px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+
+}
+
+.belge-name {
+  align-items: flex-end ;
+  margin-bottom: 10px;
+  color: #ED5F5B;
+}
+
+.belge-address {
+  align-items: flex-end ;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.belge-reviews {
+  align-items: flex-end;
+}
+
+.belge-description {
+  align-items: flex-end ;
+  padding-left: 100px;
+  padding-top: 20px;
+  border-top: 1px solid #EAE9EA;
+}
+
+.belge-description p{
+  color: #484848;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+// AVATAR ############################
+
+.gradient {
+  background: linear-gradient(-225deg, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0.3) 50%);
+}
+
+.belge-avatar {
+  grid-row: 1 / span 1;
+  grid-column: 2 / span 1;
+  background-color: #94ACFF;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display: flex;
+  justify-content: space-around;
+  min-height: 30px;
+  min-width: 10px;
+}
+
+.midle-navbar {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display: flex;
+  justify-content: space-around;
+  min-height: 30px;
+  min-width: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+
+// PRICE ######################################
+
+
+.total-price {
+  background-color: #4A4A4A ;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  min-height: 30px;
+  min-width: 10px;
+  margin-top: 20px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+.price {
+  align-items: center;
+}
+
+.ttc {
+  align-items: center;
+}
+
+
+// RESERVATION ###############################
+
+
+.reservation {
+  grid-row: 3 / span 3;
+  grid-column: 2 / span 1;
+  background-color: white ;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  display: flex;
+  justify-content: center;
+  min-height: 30px;
+  min-width: 10px;
+  margin-top: 20px;
+  max-height: 400px;
+}
+
+.title-reservation {
+  align-items: center;
+  margin: 0 auto;
+}
+
+// REVIEWS ###############################
+
+
+.review {
+  grid-row: 3 / span 3;
+  grid-column: 1 / span 1;
+  background-color: white ;
+  display: block;
+  justify-content: space-between;
+  min-height: 30px;
+  min-width: 10px;
+  margin-top: 20px;
+  margin-right: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #EAE9EA;
+}
+
+.title-review-list {
+  align-items: center;
+  margin: 20px;
+
+}
+
+.article {
+  margin: 30px;
+  padding-top: 15px;
+  border-top: 1px solid #EAE9EA;
+  display: block;
+}
+
+.header-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+
+.left {
+  display:flex;
+  align-items: center;
+}
+
+.avatar-little {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding-right: 0px;
+  align-items: left;
+}
+
+.user-name {
+  padding-left: 30px;
+  min-width: 30px;
+}
+
+.user-name p {
+  font-size: 13px;
+  line-height: 10px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.article-rating  {
+  align-items: right;
+}
+
+.article-rating p {
+  font-size: 13px;
+  font-weight: lighter;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.toto {
+  font-size: 14px;
+  line-height: 22px;
+  margin: 30px;
+  color: rgba(0,0,0,1);
+
+}
+
+.toto p {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
