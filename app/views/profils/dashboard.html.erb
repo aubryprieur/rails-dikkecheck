@@ -4,6 +4,7 @@
       <h2>
       My Dashboard
       </h2>
+      <br>
     </div>
     <div class="tabs">
       <a class="tab active" data-target="#bio">
@@ -62,18 +63,15 @@
   <div class="tab-content hidden" id="projects">
     <div class="col-xs-12 col-sm-12 col-md-12">
       <% @belges.each do |belge| %>
+      <br>
       <h3>
       <%= belge.first_name %> <%= belge.last_name %>
       </h3>
-<% if belge.bookings.blank? %>
-    <div class="message"><p> <em>Pas de réservation, ton dikkechekker n'a pas de succès...</em></p></div>
-
-    <% end %>
-
-
-
+      <% if belge.bookings.blank? %>
+      <div class="message"><p> <em>Pas de réservation, ton dikkechekker n'a pas de succès...</em></p></div>
+      <% end %>
       <% belge.bookings.each do |booking| %>
-            <div class="row">
+      <div class="row">
         <div class="message">
           <%= cl_image_tag booking.user.facebook_picture_url, class: "avatar-large"%>
           <div class="message-name text-center">
@@ -92,9 +90,6 @@
           </div>
         </div>
       </div>
-
-
-
       <% end %>
       <% end %>
     </div>
