@@ -1,48 +1,103 @@
-<div class="container text-center belge_cont">
-  <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <div >
-        <% if @belge.photo? %>
-        <%= cl_image_tag @belge.photo.path, width: 200, height: 200, crop: :fill, :radius=>10, class: 'card-img-top' %>
-        <% end %>
-        <div class="card-block">
-          <h4 class="card-title"><%= @belge.first_name %> <%= @belge.last_name %></h4>
-          <p class="card-text description"><%= @belge.description %></p>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><p><strong>Categories :</strong>
-            <% @belge.categories.each do |category| %>
-            <%= category.name %>
-          <% end %></li>
-          <li class="list-group-item"><strong>Prix TTC :</strong><%= @belge.price %>  euros</li>
-        </ul>
+<div class="container text-center">
+  <br>
+  <br>
+  <br>
+  <div class="grid-presentation">
+
+
+    <div class="belge-presentation">
+      <div class="belge-name">
+        <h3 class="text-right"><strong><%= @belge.first_name %> <%= @belge.last_name %></strong></h3>
+      </div>
+      <div class="belge-address">
+        <p class="text-right"><%= @belge.address %></p>
+      </div>
+      <div class="belge-description">
+        <p class="text-right"><strong>Présentation</strong></p>
+        <p class="text-right"><%= @belge.description %> "</p>
       </div>
     </div>
-    <div class="col-xs-12 col-sm-6">
-      <div  >
-        <div class="card-block book_form">
-          <h4 class="card-title">Booking</h4>
-          <div class="card-text">
-            <%= simple_form_for [@belge, @booking] do |f| %>
-            <%= f.input :start_date, as: :date, html5: true, class: 'form-group'  %>
-            <%= f.input :end_date, as: :date, html5: true, class: 'form-group'  %>
+    <div class="belge-avatar gradient">
+      <% if @belge.photo? %>
+        <%= cl_image_tag @belge.photo.path, width: 350, height: 350, crop: :fill %>
+      <% end %>
+    </div>
+
+    <div class="midle-navbar">
+      <p></p>
+    </div>
+
+
+    <div class="total-price">
+      <div class="ttc">
+        <p class="text-right">Prix TTC : </p>
+      </div>
+      <div class="price">
+        <p class="text-left"><strong><%= @belge.price %> €/jour</strong></p>
+      </div>
+    </div>
+
+
+    <div class="review">
+      <div class="title-review-list">
+        <h3 class="text-left">Reviews</h3>
+      </div>
+        <div class="form-group">
+          <% @belge.reviews.each do |review| %>
+            <div class="article">
+              <div class="header-reviews">
+                <div class="left">
+                  <%= cl_image_tag review.user.facebook_picture_url, width: 40, height: 40, crop: :fill, radius: 50, class: "avatar-little"%>
+                  <div class="user-name">
+                    <p class="text-left"><strong><%=review.user.first_name%> <%=review.user.last_name%></strong></p>
+                    <p class="text-left"><%= review.created_at %></p>
+                  </div>
+                </div>
+                <div>
+                  <div class="article-rating">
+                    <% review.rating.times do %>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                    <%  end %>
+                    <% (5 - review.rating).times do %>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    <%  end %>
+                  </div>
+                </div>
+              </div>
+              <div class="toto">
+                <p class="text-left"><%= review.description %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+
+
+    <div class="reservation">
+      <div class="title_reservation">
+        <h4>Réserver maintenant</h4>
+        <div class="form-group">
+          <%= simple_form_for [@belge, @booking] do |f| %>
+            <%= f.input :start_date, as: :date, html5: true, class: 'form-control'  %>
+            <%= f.input :end_date, as: :date, html5: true, class: 'form-control'  %>
             <%= f.input :message, class: 'form-control' %>
-            <%= f.button :submit, class: 'btn btn-primary' %>
-            <% end %>
-          </div>
+            <%= f.button :submit, class: 'btn btn-danger' %>
+          <% end %>
         </div>
       </div>
     </div>
   </div>
-  <%= link_to "All Belgians", belges_path,  class: "btn btn-primary btn-all" %>
-<div class="Review-title">Reviews</div>
-<div class="reviews">
-<% @belge.reviews.each do |review| %>
-<strong><p>Title : </strong> <%= review.title %></p>
-<strong><p>Description : </strong> <%= review.description %></p>
-<strong><p>Rating : </strong> <%= review.rating %></p>
-<% end %>
 </div>
 
 
-</div>
+
+
+
+
+
+
+
+
+
+
+
