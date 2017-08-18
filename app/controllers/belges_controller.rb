@@ -10,14 +10,11 @@ class BelgesController < ApplicationController
     #   @belges = Belge.where.not(latitude: nil, longitude: nil)
     # end
 
-
     if params[:city] != ''
       @belges = Belge.near(params[:city], 10)
     else
       @belges = Belge.where.not(latitude: nil, longitude: nil)
     end
-
-
 
     @hash = Gmaps4rails.build_markers(@belges) do |belge, marker|
       marker.lat belge.latitude
@@ -42,7 +39,6 @@ class BelgesController < ApplicationController
       BelgeMailer.creation_confirmation(@belge).deliver_now
       redirect_to belge_path(@belge)
     else
-
       render :new
     end
   end
