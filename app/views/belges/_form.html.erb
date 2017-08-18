@@ -19,7 +19,7 @@
     <%= f.input :description, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.input :address, class: 'form-control' %>
+    <%= f.input :address, class: 'form-control', input_html: { id: 'inlineFormInput', name: 'city' } %>
   </div>
   <div class="form-group">
     <%= f.input :price, class: 'form-control' %>
