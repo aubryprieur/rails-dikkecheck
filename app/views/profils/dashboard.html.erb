@@ -2,18 +2,18 @@
   <div class="container profile-header-container text-center">
     <div class="profile-header-infos">
       <h2>
-        My Dashboard
+      My Dashboard
       </h2>
     </div>
     <div class="tabs">
       <a class="tab active" data-target="#bio">
         <h3>
-          Mes reservations
+        Mes reservations
         </h3>
       </a>
       <a class="tab" data-target="#projects">
         <h3>
-          Mes dikkecheckers
+        Mes dikkecheckers
         </h3>
       </a>
     </div>
@@ -35,7 +35,7 @@
                 <% end %>
                 <div class="message-name text-center">
                   <h4>
-                    <%= booking.belge.first_name %> <%= booking.belge.last_name %>
+                  <%= booking.belge.first_name %> <%= booking.belge.last_name %>
                   </h4>
                 </div>
                 <div class="message-body">
@@ -66,7 +66,7 @@
       <%= belge.first_name %> <%= belge.last_name %>
       </h3>
       <% belge.bookings.each do |booking| %>
-      <div class="row">
+            <div class="row">
         <div class="message">
           <%= cl_image_tag booking.user.facebook_picture_url, class: "avatar-large"%>
           <div class="message-name text-center">
@@ -76,11 +76,18 @@
             <p>Dates : <%= booking.start_date %> to <%= booking.end_date %></p>
           </div>
           <div class="message-status">
+            <% if booking.status == "Demande en cours" %>
             <%= link_to "Refus", refus_booking_path(id: booking.id), :method => :post, class: 'btn btn-default' %>
             <%= link_to "Accept", accept_booking_path(id: booking.id), :method => :post, class: 'btn btn-danger' %>
+            <% else %>
+            <%= booking.status %>
+            <% end %>
           </div>
         </div>
       </div>
+
+
+
       <% end %>
       <% end %>
     </div>
