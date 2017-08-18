@@ -3,11 +3,21 @@ class BelgesController < ApplicationController
   before_action :set_belge, only: [:show, :edit]
   def index
 
+    # if params["accent"]
+    #   category = Category.where(name: params[:accent])
+    #   @belges = BelgeCategory.where(category: category).map { |cat| cat.belge }
+    # else
+    #   @belges = Belge.where.not(latitude: nil, longitude: nil)
+    # end
+
+
     if params[:city] != ''
       @belges = Belge.near(params[:city], 10)
     else
       @belges = Belge.where.not(latitude: nil, longitude: nil)
     end
+
+
 
     @hash = Gmaps4rails.build_markers(@belges) do |belge, marker|
       marker.lat belge.latitude
