@@ -65,6 +65,13 @@
       <h3>
       <%= belge.first_name %> <%= belge.last_name %>
       </h3>
+<% if belge.bookings.blank? %>
+    <div class="message"><p> <em>Pas de réservation, ton dikkechekker n'a pas de succès...</em></p></div>
+
+    <% end %>
+
+
+
       <% belge.bookings.each do |booking| %>
             <div class="row">
         <div class="message">
